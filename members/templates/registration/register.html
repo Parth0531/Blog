@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Register{% endblock %}
+{% block content %}
+
+
+<div>
+	<h1 style="margin-left: 10px; color: whitesmoke; margin-top: 10px; background-color:rgb(87, 165, 238); font-size: 50px;">Register</h1>
+	<br/><br/>
+</div>
+<div class="colM" style="margin-left: 25px;">
+    {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %} 
+	<div class="form-group">
+        <form method="POST" enctype="multipart/form-data">
+			{% csrf_token %}
+			{{ form.as_p }}
+            <br/>
+			<button class="btn btn-secondary" style="background-color:lightblue;color:black ;">Update</button>
+	</div>
+</div>
+
+<br/>
+
+{% endblock %}
